@@ -17,11 +17,16 @@ runs:
     - shell: bash
       id: setup
       run: |
-        sudo apt update > /dev/null 2>&1
-        sudo apt autoremove -y > /dev/null 2>&1
-        sudo apt install -y fonts-ipafont-gothic > /dev/null 2>&1
-        sudo apt install -y python3 > /dev/null 2>&1
-        sudo python3 -m pip install selenium > /dev/null 2>&1
-        sudo apt install -y chromium-chromedriver > /dev/null 2>&1
+        sudo apt update
+        sudo apt autoremove -y
+        sudo apt install -y fonts-ipafont-gothic
+        sudo apt install -y python3
+        sudo python3 -m pip install selenium
+        sudo apt install -y chromium-chromedriver
+
+    - shell: bash
+      id: setup
+      run: |
         cd ${{ github.action_path }}
         python3 automation.py ${{ inputs.ID }} ${{ inputs.PASSWORD }}
+

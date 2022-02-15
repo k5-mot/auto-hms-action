@@ -12,13 +12,13 @@
 1. `.github/workflows/automation-hms.yml`を新しく作ったRepositoryにpush
 
 ```yaml:automation-hms.yml
-name: 'Automation of NU Health Manage System'
+name: 'Automation of NU-HMS'
 
 on:
   push:
     branches: [ main ]
   schedule:
-    - cron: '0 21 * * *'
+    - cron: '10 15 * * *'
 
 jobs:
   ubuntu-test:
