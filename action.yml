@@ -26,7 +26,11 @@ runs:
 
     - shell: bash
       id: action_path
-      run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+      run: |
+        echo "${{ github.action_path }}" >> $GITHUB_PATH
+        ls -al .
+        ls -al ..
+        ls -al ${{ github.action_path }}
 
     - shell: bash
       id: automation
