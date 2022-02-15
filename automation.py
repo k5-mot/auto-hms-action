@@ -108,5 +108,5 @@ def main(argv = sys.argv):
         sys.exit()
     #elem_outbtn[0].click()
 
-def __main__():
+if __name__ == '__main__':
     main(sys.argv)
