@@ -1,0 +1,31 @@
+name: 'auto-hms-action'
+description: 'GitHub Action for Automation of NU-HMS'
+
+inputs:
+  ID:
+    description: 'School ID at Nagasaki University'
+    required:    true
+    default:     'bb12345678'
+  PASSWORD:
+    description: 'Password of School ID at Nagasaki University'
+    required:    true
+    default:     'passwd'
+
+runs:
+  using: 'composite'
+  steps:
+    - shell: bash
+      id: setup
+      run: |
+        sudo apt update
+        sudo apt autoremove -y
+        sudo apt install -y fonts-ipafont-gothic
+        sudo apt install -y python3
+        sudo python3 -m pip install selenium
+        sudo apt install -y chromium-chromedriver
+
+    - shell: bash
+      id: automation
+      run: |
+        wget https://raw.githubusercontent.com/k5-mot/auto-hms-action/main/automation.py
+        python3 automation.py ${{ inputs.ID }} ${{ inputs.PASSWORD }}
