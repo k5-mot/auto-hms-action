@@ -29,8 +29,8 @@ jobs:
 
       - uses: k5-mot/auto-hms-action@main
         with:
-          id:       'bb12345678'
-          password: 'passwd'
+          ID:       'bb12345678'
+          PASSWORD: 'passwd'
 ```
 
 ## 🔖 References / 参考文献
