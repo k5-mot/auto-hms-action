@@ -25,5 +25,10 @@ runs:
         sudo apt install -y chromium-chromedriver
 
     - shell: bash
+      id: action_path
+      run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+
+    - shell: bash
       id: automation
-      run: python3 $/automation.py ${{ inputs.ID }} ${{ inputs.PASSWORD }}
+      run: |
+        python3 automation.py ${{ inputs.ID }} ${{ inputs.PASSWORD }}
