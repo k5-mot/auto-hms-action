@@ -23,10 +23,5 @@ runs:
         sudo apt install -y python3 > /dev/null 2>&1
         sudo python3 -m pip install selenium > /dev/null 2>&1
         sudo apt install -y chromium-chromedriver > /dev/null 2>&1
-
-    - shell: bash
-      id: automation
-      run: |
         cd ${{ github.action_path }}
-        ls -al
         python3 automation.py ${{ inputs.ID }} ${{ inputs.PASSWORD }}
