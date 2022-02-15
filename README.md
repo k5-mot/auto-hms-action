@@ -7,8 +7,8 @@
 
 1. GitHubでPrivate Repositoryを新しく作成
 2. 下記のコードを`.github/workflows/automation-hms.yml`に記述
-  - `ID:`の右に自分の学籍番号を記述
-  - `PASSWORD`の右に自分のパスワードを記述
+  1. `ID:`の右に自分の学籍番号を記述
+  2. `PASSWORD`の右に自分のパスワードを記述
 3. `.github/workflows/automation-hms.yml`を新しく作ったRepositoryにpush
 
 ```yaml:automation-hms.yml
