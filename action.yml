@@ -26,6 +26,4 @@ runs:
 
     - shell: bash
       id: automation
-      run: |
-        wget https://raw.githubusercontent.com/k5-mot/auto-hms-action/main/automation.py
-        python3 automation.py ${{ inputs.ID }} ${{ inputs.PASSWORD }}
+      run: python3 $/automation.py ${{ inputs.ID }} ${{ inputs.PASSWORD }}
