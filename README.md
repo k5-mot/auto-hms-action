@@ -18,7 +18,7 @@ on:
   push:
     branches: [ main ]
   schedule:
-    - cron: '10 15 * * *'
+    - cron: '0 0 * * *'
 
 jobs:
   ubuntu-test:
