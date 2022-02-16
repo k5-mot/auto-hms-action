@@ -5,8 +5,8 @@
 
 ## 🏯 使い方 / Usage
 
-1. GitHub で本リポジトリをフォークする
-1. フォークしたリポジトリの `Settings` をクリック
+1. GitHub で本リポジトリを `Fork` する
+1. `Fork` したリポジトリの `Settings` をクリック
 1. `Secrets > Actions` をクリック
 1. `SCHOOL_ID` と `SCHOOL_PASSWD` を設定する
     1. `New repository secret` をクリック
