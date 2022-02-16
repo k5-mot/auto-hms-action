@@ -28,7 +28,7 @@ jobs:
         if: always() && ${{ env.DISCORD_WEBHOOK }} != null
         with:
           webhook: ${{ env.DISCORD_WEBHOOK }}
-          title: 'GitHub Actions'
+          title: 'Auto-HMS'
           description: 'Automation of NU Health Management System'
           username: 'Auto-HMS'
           avatar_url: 'https://github.githubassets.com/images/modules/logos_page/Octocat.png'
