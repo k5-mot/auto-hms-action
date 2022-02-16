@@ -32,3 +32,5 @@ jobs:
           description: 'Automation of NU Health Management System'
           username: 'Auto-HMS'
           avatar_url: 'https://github.githubassets.com/images/modules/logos_page/Octocat.png'
+          image: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png'
+
