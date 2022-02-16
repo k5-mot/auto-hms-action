@@ -1,5 +1,5 @@
 name: 'auto-hms-action'
-description: 'GitHub Action for Automation of NU-HMS'
+description: 'GitHub Action for Automation of NU Health Management System'
 
 inputs:
   SCHOOL_ID:

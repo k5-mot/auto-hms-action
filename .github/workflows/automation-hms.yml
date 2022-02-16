@@ -1,4 +1,4 @@
-name: 'Automation of NU-HMS'
+name: 'Automation of NU Health Management System'
 
 on:
   schedule:

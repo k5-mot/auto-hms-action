@@ -1,4 +1,4 @@
-# 🦾 Automation HMS
+# 🦾 Automation of NU Health Management System
 
 🤖 長崎大学 健康管理システムの自動化
 
