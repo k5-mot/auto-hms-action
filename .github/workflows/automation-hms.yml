@@ -18,6 +18,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - env:
+          TZ: 'Asia/Tokyo'
+        run: echo "CURRENT_DATETIME=$(date +'%H:%M:%S JST')" >> $GITHUB_ENV
+
       - uses: k5-mot/auto-hms-action@main
         if: ${{ env.SCHOOL_ID }} != null && ${{ env.SCHOOL_PASSWD }} != null
         with:
@@ -28,13 +32,13 @@ jobs:
         if: always() && ${{ env.DISCORD_WEBHOOK }} != null
         with:
           webhook: ${{ env.DISCORD_WEBHOOK }}
-          title: 'Automation of NU Health Management System'
+          title: '長崎大学 健康管理システムの入力自動化'
           username: 'Auto-HMS Bot'
           image: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png'
           avatar_url: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
           nocontext: true
           description: |
-            [長崎大学 健康管理システム](https://hms.hc.nagasaki-u.ac.jp/)の自動入力プロセスです。<br>
-            今日の分の健康情報をシステムに入力したことを通知いたします。<br>
-            不具合を発見した場合は、[こちら](https://github.com/k5-mot/auto-hms-action)にご連絡ください。<br>
+            Automation of NU Health Management System (${{ env.CURRENT_DATETIME }})
+            [長崎大学 健康管理システム](https://hms.hc.nagasaki-u.ac.jp/)
+            [k5-mot/auto-hms-action](https://github.com/k5-mot/auto-hms-action)
 

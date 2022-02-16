@@ -70,6 +70,7 @@ def main(argv = sys.argv):
     # 備考に時間を追記
     jst_time = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))
     elem_note = driver.find_element(By.ID, 'note')
+    elem_note.clear()
     elem_note.send_keys(jst_time.strftime('%H:%M:%S JST'))
     sleep(5)
 
