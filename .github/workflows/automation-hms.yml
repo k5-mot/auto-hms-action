@@ -39,6 +39,6 @@ jobs:
           nocontext: true
           description: |
             [長崎大学 健康管理システム](https://hms.hc.nagasaki-u.ac.jp/)の自動入力プロセスです。
-            ${{ env.CURRENT_DATETIME }}に、今日の分の健康情報をシステムに入力したことを通知いたします。
+            ${{ env.CURRENT_DATETIME }}に、今日の分の健康情報を入力いたしました。
             不具合の報告は、[k5-mot/auto-hms-action](https://github.com/k5-mot/auto-hms-action)のIssuesでお願いします。
 
