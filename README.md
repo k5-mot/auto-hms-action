@@ -1,6 +1,6 @@
-# 🦾 Automation of NU Health Management System
+# 🤖 Automation of NU Health Management System
 
-🤖 長崎大学 健康管理システムの自動化
+[長崎大学 健康管理システム](https://hms.hc.nagasaki-u.ac.jp/)の自動化
 
 
 ## 🏯 Usage / 使い方
@@ -28,9 +28,15 @@
 
 - 毎日0:00 UTC (9:00 JST) にシステムに自動入力するように設定していますが、 **GitHub Actions の負荷の影響により、指定時間から大きく遅延することがあります。**
 
+
 ## 🔖 References / 参考文献
 
 - [長崎大学 健康管理システム](https://hms.hc.nagasaki-u.ac.jp/)
+
+
+## 🖊️ Note / 備考
+
+- 不具合報告は、[Issues](https://github.com/k5-mot/auto-hms-action/issues)にお願いします。
 
 
 ## 🍋 License / ライセンス

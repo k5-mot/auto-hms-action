@@ -21,7 +21,7 @@ jobs:
       - name: 'Set current datetime as env variable'
         env:
           TZ: 'Asia/Tokyo'
-        run: echo "CURRENT_DATETIME=$(date +'%Y/%m/%d(%a) %H:%M JST')" >> $GITHUB_ENV
+        run: echo "CURRENT_DATETIME=$(date +'%Y/%m/%d(%a) %H:%M:%S JST')" >> $GITHUB_ENV
 
       - uses: k5-mot/auto-hms-action@main
         if: ${{ env.SCHOOL_ID }} != null && ${{ env.SCHOOL_PASSWD }} != null
@@ -33,10 +33,10 @@ jobs:
         if: always() && ${{ env.DISCORD_WEBHOOK }} != null
         with:
           webhook: ${{ env.DISCORD_WEBHOOK }}
-          title: ' 🤖 長崎大学 健康管理システム 自動入力通知'
+          title: ' 長崎大学 健康管理システム 自動入力通知'
           username: 'Auto-HMS Bot'
           avatar_url: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
           nocontext: true
           description: |
-            ⏲️ `${{ env.CURRENT_DATETIME }}`   🏥 [長崎大学 健康管理システム](https://hms.hc.nagasaki-u.ac.jp/) ⚙️ [GitHub](https://github.com/k5-mot/auto-hms-action)
+            [${{ env.CURRENT_DATETIME }}](https://hms.hc.nagasaki-u.ac.jp/)
 
