@@ -57,7 +57,8 @@ def main(argv = sys.argv):
 
     # 「健康管理情報 入力」画面の「登録」をクリック
     print('Register health info')
-    elem_regbtn = driver.find_element(By.CLASS_NAME, 'btn_style1')
+    elem_regbtn = driver.find_element(By.XPATH, '//form[@id="input_form"]/div[@class="box_btn_style2"]/button')
+    # elem_regbtn = driver.find_element(By.CLASS_NAME, 'btn_style1')
     elem_regbtn.click()
 
     # 「更新を行いますがよろしいですか?」ポップアップの「OK」を押下
@@ -74,7 +75,8 @@ def main(argv = sys.argv):
 
     # 画面が遷移したかチェック
     print('Updated: ', end='')
-    elem_regbtn = driver.find_element(By.CLASS_NAME, 'btn_style1')
+    elem_regbtn = driver.find_element(By.XPATH, '//form[@id="input_form"]/div[@class="box_btn_style2"]/button')
+    # elem_regbtn = driver.find_element(By.CLASS_NAME, 'btn_style1')
     if elem_regbtn.text == "登録（Register）":
         print('Success')
     else:
