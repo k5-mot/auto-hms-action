@@ -18,9 +18,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - env:
+      - name: 'Set current datetime as env variable'
+        env:
           TZ: 'Asia/Tokyo'
-        run: echo "CURRENT_DATETIME=$(date +'%Y/%m/%d (%a) %H:%M:%S JST')" >> $GITHUB_ENV
+        run: echo "CURRENT_DATETIME=$(date +'%Y/%m/%d(%a) %H:%M:%S JST')" >> $GITHUB_ENV
 
       - uses: k5-mot/auto-hms-action@main
         if: ${{ env.SCHOOL_ID }} != null && ${{ env.SCHOOL_PASSWD }} != null
@@ -38,7 +39,6 @@ jobs:
           avatar_url: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
           nocontext: true
           description: |
-            [長崎大学 健康管理システム](https://hms.hc.nagasaki-u.ac.jp/)の自動入力プロセスです。
-            ${{ env.CURRENT_DATETIME }}に、今日の分の健康情報を入力いたしました。
-            不具合の報告は、[k5-mot/auto-hms-action](https://github.com/k5-mot/auto-hms-action)のIssuesでお願いします。
+            入力完了 `${{ env.CURRENT_DATETIME }}`
+            [長崎大学 健康管理システム](https://hms.hc.nagasaki-u.ac.jp/), [k5-mot/auto-hms-action](https://github.com/k5-mot/auto-hms-action)
 
