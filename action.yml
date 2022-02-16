@@ -28,7 +28,5 @@ runs:
       id: automation
       run: |
         cd ${{ github.action_path }}
-        echo "UTC: $(date '+%Y-%m-%d %H:%M:%S(%z)')"
-        echo "JST: $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M:%S(%z)')"
         python3 automation.py ${{ inputs.SCHOOL_ID }} ${{ inputs.SCHOOL_PASSWD }}
 
