@@ -29,9 +29,11 @@ jobs:
         with:
           webhook: ${{ env.DISCORD_WEBHOOK }}
           title: 'Automation of NU Health Management System'
-          username: 'Auto-HMS'
+          username: 'Auto-HMS Bot'
           image: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png'
           avatar_url: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
+          nocontext: true
           description: |
-            [NU Health Management System](https://hms.hc.nagasaki-u.ac.jp/)
-
+            [長崎大学 健康管理システム](https://hms.hc.nagasaki-u.ac.jp/)の自動入力プロセスです。
+            今日の分の健康情報をシステムに入力いたしました。
+            Have a nice day!!!
