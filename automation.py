@@ -71,7 +71,7 @@ def main(argv = sys.argv):
     jst_time = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))
     elem_note = driver.find_element(By.ID, 'note')
     elem_note.clear()
-    elem_note.send_keys(jst_time.strftime('%Y/%m/%d (%a) %H:%M:%S.%f JST'))
+    elem_note.send_keys(jst_time.strftime('%Y/%m/%d(%a) %H:%M:%S JST'))
     sleep(5)
 
     # 「健康管理情報 入力」画面の「登録」をクリック

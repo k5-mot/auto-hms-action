@@ -21,7 +21,7 @@ jobs:
       - name: 'Set current datetime as env variable'
         env:
           TZ: 'Asia/Tokyo'
-        run: echo "CURRENT_DATETIME=$(date +'%Y/%m/%d(%a) %H:%M:%S JST')" >> $GITHUB_ENV
+        run: echo "CURRENT_DATETIME=$(date +'%Y/%m/%d(%a) %H:%M JST')" >> $GITHUB_ENV
 
       - uses: k5-mot/auto-hms-action@main
         if: ${{ env.SCHOOL_ID }} != null && ${{ env.SCHOOL_PASSWD }} != null
