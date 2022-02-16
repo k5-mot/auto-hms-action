@@ -5,33 +5,13 @@
 
 ## 🏯 使い方 / Usage
 
-1. GitHubでPrivate Repositoryを新しく作成
-1. 下記のコードを`.github/workflows/automation-hms.yml`に記述
-    1. `ID:`の右に自分の学籍番号を記述
-    1. `PASSWORD`の右に自分のパスワードを記述
-1. `.github/workflows/automation-hms.yml`を新しく作ったRepositoryにpush
+1. GitHub で本リポジトリをフォークする
+1. フォークしたリポジトリの Settings を開く
+1. Secrets --> Actions を開く
+1. SCHOOL_ID と SCHOOL_PASSWD を設定する
+    1. SCHOOL_ID に自分の学籍番号を記述
+    1. SCHOOL_PASSWD に自分のパスワードを記述
 
-```yaml:automation-hms.yml
-name: 'Automation of NU-HMS'
-
-on:
-  push:
-    branches: [ main ]
-  schedule:
-    - cron: '0 0 * * *'
-
-jobs:
-  ubuntu-test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - uses: k5-mot/auto-hms-action@main
-        with:
-          ID:       'bb12345678'
-          PASSWORD: 'passwd'
-```
 
 ## 🔖 References / 参考文献
 
@@ -42,5 +22,5 @@ jobs:
 
 Copyright (c) 2021-2022 k5-mot All Rights Reserved.
 
-"k5-mot/auto-hms" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
+"k5-mot/auto-hms-action" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
 

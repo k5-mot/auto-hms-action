@@ -2,11 +2,11 @@ name: 'auto-hms-action'
 description: 'GitHub Action for Automation of NU-HMS'
 
 inputs:
-  ID:
+  SCHOOL_ID:
     description: 'School ID at Nagasaki University'
     required:    true
     default:     'bb12345678'
-  PASSWORD:
+  SCHOOL_PASSWD:
     description: 'Password of School ID at Nagasaki University'
     required:    true
     default:     'passwd'
@@ -28,5 +28,5 @@ runs:
       id: automation
       run: |
         cd ${{ github.action_path }}
-        python3 automation.py ${{ inputs.ID }} ${{ inputs.PASSWORD }}
+        python3 automation.py ${{ inputs.SCHOOL_ID }} ${{ inputs.SCHOOL_PASSWD }}
 

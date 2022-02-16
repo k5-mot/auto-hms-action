@@ -2,19 +2,33 @@ name: 'Automation of NU-HMS'
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   schedule:
     - cron: '0 0 * * *'
 
 jobs:
   ubuntu-test:
+    env:
+      SCHOOL_ID: ${{ secrets.SCHOOL_ID }}
+      SCHOOL_PASSWD: ${{ secrets.SCHOOL_PASSWD }}
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
 
       - uses: k5-mot/auto-hms-action@main
+        if: ${{ env.SCHOOL_ID }} != null && ${{ env.SCHOOL_PASSWORD }} != null
         with:
-          ID:       'bb12345678'
-          PASSWORD: 'passwd'
+          SCHOOL_ID:
+          SCHOOL_PASSWD:
 
+      - uses: sarisia/actions-status-discord@v1
+        if: always() && ${{ env.DISCORD_WEBHOOK }} != null
+        with:
+          webhook: ${{ env.DISCORD_WEBHOOK }}
+          title: 'GitHub Actions'
+          description: 'Automation of NU Health Management System'
+          username: 'Auto-HMS'
+          avatar_url: 'https://github.githubassets.com/images/modules/logos_page/Octocat.png'
