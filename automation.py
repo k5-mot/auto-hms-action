@@ -7,6 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.alert import Alert
 from time import sleep
+import datetime
 
 def main(argv = sys.argv):
     # USERNAME
@@ -64,6 +65,12 @@ def main(argv = sys.argv):
         print('Failed')
         sys.exit()
     elem_inbtn.click()
+    sleep(5)
+
+    # 備考に時間を追記
+    jst_time = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))
+    elem_note = driver.find_element(By.ID, 'note')
+    elem_note.send_keys(jst_time.strftime('%H:%M:%S JST'))
     sleep(5)
 
     # 「健康管理情報 入力」画面の「登録」をクリック
