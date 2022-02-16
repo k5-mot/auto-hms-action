@@ -1,11 +1,11 @@
 name: 'Automation of NU-HMS'
 
 on:
-  push:
-    branches:
-      - main
   schedule:
     - cron: '0 0 * * *'
+      # push:
+      #   branches:
+      #     - main
 
 jobs:
   ubuntu-test:

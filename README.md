@@ -6,11 +6,18 @@
 ## 🏯 使い方 / Usage
 
 1. GitHub で本リポジトリをフォークする
-1. フォークしたリポジトリの Settings を開く
-1. Secrets --> Actions を開く
-1. SCHOOL_ID と SCHOOL_PASSWD を設定する
-    1. SCHOOL_ID に自分の学籍番号を記述
-    1. SCHOOL_PASSWD に自分のパスワードを記述
+1. フォークしたリポジトリの `Settings` をクリック
+1. `Secrets > Actions` をクリック
+1. `SCHOOL_ID` と `SCHOOL_PASSWD` を設定する
+    1. `New repository secret` をクリック
+    1. `Name` に `SCHOOL_ID` を入力
+    1. `Value` に自分の学籍番号(例: bb12345678) を入力
+    1. `Add secret` をクリック
+    1. 再度、 `New repository secret` をクリック
+    1. `Name` に `SCHOOL_PASSWD` を入力
+    1. `Value` に自分のパスワード を入力
+    1. `Add secret` をクリック
+1. 設定終了
 
 
 ## 🔖 References / 参考文献
