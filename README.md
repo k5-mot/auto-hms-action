@@ -3,7 +3,7 @@
 🤖 長崎大学 健康管理システムの自動化
 
 
-## 🏯 使い方 / Usage
+## 🏯 Usage / 使い方
 
 1. GitHub で本リポジトリを `Fork` する
 1. `Fork` したリポジトリの `Settings` をクリック
@@ -17,7 +17,14 @@
     1. `Name` に `SCHOOL_PASSWD` を入力
     1. `Value` に自分のパスワード を入力
     1. `Add secret` をクリック
-1. 設定終了
+1. 基本設定、終了
+1. 下記は、Discord通知設定
+1. `DISCORD_WEBHOOK` を設定する
+    1. `New repository secret` をクリック
+    1. `Name` に `DISCORD_WEBHOOK` を入力
+    1. `Value` に Discord の Webhook URL を入力
+    1. `Add secret` をクリック
+1. Discord通知設定、終了
 
 
 ## 🔖 References / 参考文献
