@@ -21,8 +21,8 @@ jobs:
       - uses: k5-mot/auto-hms-action@main
         if: ${{ env.SCHOOL_ID }} != null && ${{ env.SCHOOL_PASSWORD }} != null
         with:
-          SCHOOL_ID:
-          SCHOOL_PASSWD:
+          SCHOOL_ID: ${{ env.SCHOOL_ID }}
+          SCHOOL_PASSWD: ${{ env.SCHOOL_PASSWORD }}
 
       - uses: sarisia/actions-status-discord@v1
         if: always() && ${{ env.DISCORD_WEBHOOK }} != null
