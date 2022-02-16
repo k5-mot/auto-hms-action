@@ -17,12 +17,12 @@ runs:
     - shell: bash
       id: setup
       run: |
-        sudo apt --quiet update
-        sudo apt --quiet autoremove -y
-        sudo apt --quiet install -y fonts-ipafont-gothic
-        sudo apt --quiet install -y python3
-        sudo python3 -m pip install --quiet selenium
-        sudo apt --quiet install -y chromium-chromedriver
+        sudo apt update
+        sudo apt autoremove -y
+        sudo apt install -y fonts-ipafont-gothic
+        sudo apt install -y python3
+        sudo python3 -m pip install selenium
+        sudo apt install -y chromium-chromedriver
 
     - shell: bash
       id: automation
