@@ -3,10 +3,10 @@ name: 'Automation of NU Health Management System'
 on:
   schedule:
     - cron: '0 0 * * *'
-  push:
-    branches:
-      - main
   workflow_dispatch:
+    #  push:
+    #    branches:
+    #      - main
 
 jobs:
   ubuntu-test:
