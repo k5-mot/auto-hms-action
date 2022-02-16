@@ -39,5 +39,5 @@ jobs:
           image: 'https://pbs.twimg.com/profile_banners/1159383628951851008/1565318066/1080x360'
           nocontext: true
           description: |
-            `${{ env.CURRENT_DATETIME }}`  [GitHub](https://github.com/k5-mot/auto-hms-action)
+            `${{ env.CURRENT_DATETIME }}`  [GitHub](https://github.com/k5-mot/auto-hms-action)  [NU-HMS](https://hms.hc.nagasaki-u.ac.jp/)
 
