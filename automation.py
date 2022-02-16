@@ -36,7 +36,8 @@ def main(argv = sys.argv):
     elem_password.send_keys(password)
 
     # ログインフォームの Login ボタンを押下
-    elem_loginbtn = driver.find_element(By.CLASS_NAME, 'btn_style1')
+    elem_loginbtn = driver.find_element(By.XPATH, '//div[@class="box_login_btn"]/button')
+    # elem_loginbtn = driver.find_element(By.CLASS_NAME, 'btn_style1')
     elem_loginbtn.click()
     sleep(5)
 
@@ -54,7 +55,7 @@ def main(argv = sys.argv):
     sleep(5)
 
     # 「健康管理情報 入力」画面の「登録」をクリック
-    print('Register health info: ', end='')
+    print('Register health info')
     elem_regbtn = driver.find_element(By.CLASS_NAME, 'btn_style1')
     elem_regbtn.click()
 
