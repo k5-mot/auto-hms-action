@@ -29,8 +29,8 @@ jobs:
         with:
           webhook: ${{ env.DISCORD_WEBHOOK }}
           title: 'Auto-HMS'
-          description: 'Automation of NU Health Management System'
           username: 'Auto-HMS'
-          avatar_url: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
+          description: 'Automation of NU Health Management System'
           image: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png'
+          avatar_url: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
 
