@@ -43,8 +43,9 @@ def main(argv = sys.argv):
 
     # メニュー画面の「健康管理情報入力」をクリック
     print('Select menu')
-    elem_menubtn = driver.find_element(By.CLASS_NAME, 'btn_style3')
-    elem_menubtn.click()
+    elem_menubtn = driver.find_elements(By.XPATH, '//div[@class="outbox_menu"]/div[@class="box_btn_style5"]/button')
+    # elem_menubtn = driver.find_element(By.CLASS_NAME, 'btn_style3')
+    elem_menubtn[0].click()
     sleep(5)
 
     # 備考に時間を追記
