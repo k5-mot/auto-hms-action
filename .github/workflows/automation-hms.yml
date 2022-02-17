@@ -37,9 +37,10 @@ jobs:
           title: 🦾 `${{ github.actor }}` - 健康管理システム 自動入力完了
           username: 'Auto-HMS'
           avatar_url: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
-          image: 'https://pbs.twimg.com/profile_banners/1159383628951851008/1565318066/1080x360'
+          image: ${GITHUB_WORKSPACE}/screenshot.png
           nocontext: true
           noprefix: true
           description: |
             `${{ env.CURRENT_DATETIME }}` ([GitHub](https://github.com/k5-mot/auto-hms-action)) ([NU-HMS](https://hms.hc.nagasaki-u.ac.jp/))
+            # image: 'https://pbs.twimg.com/profile_banners/1159383628951851008/1565318066/1080x360'
 
