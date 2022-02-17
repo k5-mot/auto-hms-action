@@ -3,6 +3,7 @@
 [長崎大学 健康管理システム](https://hms.hc.nagasaki-u.ac.jp/)の自動化
 
 一度セットアップさえすれば、毎朝7:00~8:00にGitHub Actionが自動入力プログラムを定期実行してくれます。
+DiscordのWebhook URLを設定すれば、自動入力後、Discordに通知されます。
 
 
 ## 🏯 Setup / セットアップ
