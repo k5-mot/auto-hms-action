@@ -30,6 +30,11 @@ jobs:
           SCHOOL_ID: ${{ env.SCHOOL_ID }}
           SCHOOL_PASSWD: ${{ env.SCHOOL_PASSWD }}
 
+      - shell: bash
+        run: |
+          cd ${GITHUB_WORKSPACE}
+          ls -al
+
       - uses: sarisia/actions-status-discord@v1
         if: always() && ${{ env.DISCORD_WEBHOOK }} != null
         with:
