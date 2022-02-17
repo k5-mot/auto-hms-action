@@ -30,3 +30,9 @@ runs:
         cd ${{ github.action_path }}
         python3 automation.py ${{ inputs.SCHOOL_ID }} ${{ inputs.SCHOOL_PASSWD }}
 
+    - shell: bash
+      id: check
+      run: |
+        cd ${{ github.action_path }}
+        python3 check.py ${{ inputs.SCHOOL_ID }} ${{ inputs.SCHOOL_PASSWD }}
+
