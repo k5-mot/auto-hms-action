@@ -30,11 +30,6 @@ jobs:
           SCHOOL_ID: ${{ env.SCHOOL_ID }}
           SCHOOL_PASSWD: ${{ env.SCHOOL_PASSWD }}
 
-      - shell: bash
-        run: |
-          echo ${{ github.action_path }}
-          echo ${{ github.workspace }}
-
       - uses: sarisia/actions-status-discord@v1
         if: always() && ${{ env.DISCORD_WEBHOOK }} != null
         with:
@@ -42,13 +37,13 @@ jobs:
           title: 🦾 `${{ github.actor }}` - 健康管理システム 自動入力完了
           username: 'Auto-HMS'
           avatar_url: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
-          image: "file://${{ github.workspace }}/screenshot.png"
+          image: 'https://pbs.twimg.com/profile_banners/1159383628951851008/1565318066/1080x360'
           nocontext: true
           noprefix: true
           description: |
             `${{ env.CURRENT_DATETIME }}` ([GitHub](https://github.com/k5-mot/auto-hms-action)) ([NU-HMS](https://hms.hc.nagasaki-u.ac.jp/))
 
 
+            #image: "file://${{ github.workspace }}/screenshot.png"
 
-# image: 'https://pbs.twimg.com/profile_banners/1159383628951851008/1565318066/1080x360'
 
