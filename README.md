@@ -37,7 +37,7 @@
 
 ## 🖊️ Note / 備考
 
-- 毎日0:00 UTC (9:00 JST) にシステムに自動入力するように設定しています。
+- 毎日22:00 UTC (7:00 JST) にシステムに自動入力するように設定しています。
 - しかし、 GitHub Actions の負荷次第で、 **指定時間から大きく遅延することがあります。**
 - 不具合報告は、[Issues](https://github.com/k5-mot/auto-hms-action/issues)にお願いします。
 
