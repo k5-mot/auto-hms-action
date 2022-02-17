@@ -54,7 +54,7 @@ def main(argv = sys.argv):
     elem_infotab = driver.find_element(By.XPATH, '//table[@class="tbl_hcHistory"]/tbody/tr[' + str(jst_time.day + 1) + ']')
     info_image = elem_infotab.screenshot_as_png
     with open("./screenshot.png", "wb") as f:
-        f.write(png)
+        f.write(info_image)
     sleep(5)
 
     # 終了
