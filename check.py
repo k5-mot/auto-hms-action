@@ -45,9 +45,13 @@ def main(argv = sys.argv):
     elem_menubtn[1].click()
     sleep(5)
 
-    # 備考に時間を追記
+    # 最新日の「備考」を表示
     jst_time = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))
-    elem_infotab = driver.find_element(By.XPATH, '//table[@class="tbl_hcHistory"]/tbody/tr[' + str(jst_time.day + 1)+ ']')
+    elem_infocel = driver.find_element(By.XPATH, '//table[@class="tbl_hcHistory"]/tbody/tr[' + str(jst_time.day + 1) + ']/td[@class="note"]/span[@id="note"]')
+    print('Latest Check: ' + elem_infocel.text)
+
+    # 最新日の行をスクリーンショット
+    elem_infotab = driver.find_element(By.XPATH, '//table[@class="tbl_hcHistory"]/tbody/tr[' + str(jst_time.day + 1) + ']')
     info_image = driver.elem_infotab.screenshot_as_png
     with open("./screenshot.png", "wb") as f:
         f.write(png)
