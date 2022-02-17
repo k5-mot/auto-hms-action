@@ -2,7 +2,7 @@ name: 'Automation of NU Health Management System'
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 22 * * *'
   workflow_dispatch:
     #  push:
     #    branches:
@@ -34,7 +34,7 @@ jobs:
         if: always() && ${{ env.DISCORD_WEBHOOK }} != null
         with:
           webhook: ${{ env.DISCORD_WEBHOOK }}
-          title: ${{ github.actor }} - 健康管理システム 自動入力通知
+          title: ${{ github.actor }} - 健康管理システム 自動入力完了
           username: 'Auto-HMS'
           avatar_url: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
           image: 'https://pbs.twimg.com/profile_banners/1159383628951851008/1565318066/1080x360'
