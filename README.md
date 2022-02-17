@@ -32,7 +32,8 @@
 1. `Actions` をクリック
 1. `Automation of NU Health Management System` をクリック
 1. `Run workflow` をクリック
-1. 起動したworkflowに ✔️ マークが付いたら、テスト成功
+1. 起動したworkflowに ✔️ マークが付いたら、テスト1は成功
+1. 最後に、健康管理システムの一覧に入力されていれば、テスト2は成功
 
 
 ## 🖊️ Note / 備考
