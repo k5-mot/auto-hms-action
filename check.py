@@ -1,4 +1,3 @@
-# original code from https://qiita.com/ftoyoda/items/fe3e2fe9e962e01ac421
 import sys
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -40,44 +39,19 @@ def main(argv = sys.argv):
     elem_loginbtn.click()
     sleep(5)
 
-    # メニュー画面の「健康管理情報入力」をクリック
+    # メニュー画面の「過去報告確認」をクリック
     print('Select menu')
     elem_menubtn = driver.find_elements(By.XPATH, '//div[@class="outbox_menu"]/div[@class="box_btn_style5"]/button')
-    elem_menubtn[0].click()
+    elem_menubtn[1].click()
     sleep(5)
 
     # 備考に時間を追記
     jst_time = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))
-    elem_note = driver.find_element(By.ID, 'note')
-    elem_note.clear()
-    elem_note.send_keys(jst_time.strftime('%Y/%m/%d(%a) %H:%M:%S JST'))
+    elem_infotab = driver.find_element(By.XPATH, '//table[@class="tbl_hcHistory"]/tbody/tr[' + str(jst_time.day + 1)+ ']')
+    info_image = driver.elem_infotab.screenshot_as_png
+    with open("./screenshot.png", "wb") as f:
+        f.write(png)
     sleep(5)
-
-    # 「健康管理情報 入力」画面の「登録」をクリック
-    print('Register health info')
-    elem_regbtn = driver.find_element(By.XPATH, '//form[@id="input_form"]/div[@class="box_btn_style2"]/button')
-    elem_regbtn.click()
-
-    # 「更新を行いますがよろしいですか?」ポップアップの「OK」を押下
-    wait = WebDriverWait(driver, 10)
-    wait.until(EC.alert_is_present())
-    Alert(driver).accept()
-    sleep(5)
-
-    # 「登録しました!」ポップアップの「OK」を押下
-    wait = WebDriverWait(driver, 10)
-    wait.until(EC.alert_is_present())
-    Alert(driver).accept()
-    sleep(5)
-
-    # 「メニューへ」ボタンをクリック
-    print('Updated: ', end='')
-    elem_regbtn = driver.find_element(By.XPATH, '//form[@id="input_form"]/div[@class="box_btn_style2"]/button')
-    if elem_regbtn.text == "登録（Register）":
-        print('Success')
-    else:
-        print('Failure')
-        sys.exit(-1)
 
     # 終了
     driver.close()
@@ -85,3 +59,4 @@ def main(argv = sys.argv):
 
 if __name__ == '__main__':
     main(sys.argv)
+
