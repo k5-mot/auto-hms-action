@@ -37,7 +37,7 @@ jobs:
           title: 🦾 `${{ github.actor }}` - 健康管理システム 自動入力完了
           username: 'Auto-HMS'
           avatar_url: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
-          image: 'https://source.unsplash.com/random/2160x720?food'
+          image: 'https://lh3.googleusercontent.com/pw/AM-JKLWX45liujf0wXuzjCFc4SKoOiKqNsxID7ddKZFAsf-4-3qPFMsNj7sBYITyKqfm7ZzsB8jbPSOMb7J0cMGaVQ7p03TvxcfPgdOYPmSNx0t-RxZhJGiVMqMKHKWhH3U-Yy6piDsgZCFp4Z0OpJDkvC9e=w2048-h1361-no?authuser=0'
           nocontext: true
           noprefix: true
           description: |
