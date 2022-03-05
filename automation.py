@@ -38,20 +38,19 @@ def main(argv = sys.argv):
     # ログインフォームの Login ボタンを押下
     elem_loginbtn = driver.find_element(By.XPATH, '//div[@class="box_login_btn"]/button')
     elem_loginbtn.click()
-    sleep(5)
+    WebDriverWait(driver, 15).until(EC.presence_of_all_elements_located)
 
     # メニュー画面の「健康管理情報入力」をクリック
     print('Select menu')
     elem_menubtn = driver.find_elements(By.XPATH, '//div[@class="outbox_menu"]/div[@class="box_btn_style5"]/button')
     elem_menubtn[0].click()
-    sleep(5)
+    WebDriverWait(driver, 15).until(EC.presence_of_all_elements_located)
 
     # 備考に時間を追記
     jst_time = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))
     elem_note = driver.find_element(By.ID, 'note')
     elem_note.clear()
     elem_note.send_keys(jst_time.strftime('%Y/%m/%d(%a) %H:%M:%S JST'))
-    sleep(5)
 
     # 「健康管理情報 入力」画面の「登録」をクリック
     print('Register health info')
@@ -59,18 +58,34 @@ def main(argv = sys.argv):
     elem_regbtn.click()
 
     # 「更新を行いますがよろしいですか?」ポップアップの「OK」を押下
-    wait = WebDriverWait(driver, 10)
-    wait.until(EC.alert_is_present())
-    Alert(driver).accept()
-    sleep(5)
+    while True:
+        try:
+            wait = WebDriverWait(driver, 10)
+            wait.until(EC.alert_is_present())
+            alert = driver.switch_to.alert
+            text = alert.text
+            # print(text)
+            alert.accept()
+        except:
+            continue
+        else:
+            break
 
     # 「登録しました!」ポップアップの「OK」を押下
-    wait = WebDriverWait(driver, 10)
-    wait.until(EC.alert_is_present())
-    Alert(driver).accept()
-    sleep(5)
+    while True:
+        try:
+            wait = WebDriverWait(driver, 10)
+            alert = wait.until(EC.alert_is_present())
+            text = alert.text
+            # print(text)
+            alert.accept()
+        except:
+            continue
+        else:
+            break
 
     # 「メニューへ」ボタンをクリック
+    WebDriverWait(driver, 15).until(EC.presence_of_all_elements_located)
     print('Updated: ', end='')
     elem_regbtn = driver.find_element(By.XPATH, '//form[@id="input_form"]/div[@class="box_btn_style2"]/button')
     if elem_regbtn.text == "登録（Register）":
@@ -85,3 +100,4 @@ def main(argv = sys.argv):
 
 if __name__ == '__main__':
     main(sys.argv)
+
