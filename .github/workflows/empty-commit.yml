@@ -11,5 +11,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: gautamkrishnar/keepalive-workflow@master
-
+      
+      - name: Keep alive for a cronjob trigger
+      - run: |
+          git commit --verbose --allow-empty -m ":robot: Empty commit"
+          git push --verbose https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git
+          
