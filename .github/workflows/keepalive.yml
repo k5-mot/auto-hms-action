@@ -14,6 +14,8 @@ jobs:
 
       - name: "Keepalive Action"
         run: |
+          echo "$GITHUB_REPOSITORY"
+          echo "$GITHUB_ACTOR"
           git config --global user.email "someone@sample.com"
           git config --global user.name "Keepalive Action"
           git commit --verbose --allow-empty -m ":robot: Empty commit"
