@@ -13,11 +13,8 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: "Keepalive Action"
-        run: |
-          echo "$GITHUB_REPOSITORY"
-          echo "$GITHUB_ACTOR"
-          git config --global user.email "someone@sample.com"
-          git config --global user.name "Keepalive Action"
-          git commit --verbose --allow-empty -m ":robot: Empty commit"
-          git push --verbose https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git
+        uses: k5-mot/keepalive-action@main
+        with:
+          MESSAGE: ${{env.MESSAGE}}
+          GITHUB_TOKEN: ${{env.GITHUB_TOKEN}}
 
