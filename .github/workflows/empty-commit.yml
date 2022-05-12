@@ -1,8 +1,9 @@
-name: GitHub Action for keeping a cronjob trigger.
+name: "Keepalive Action"
+description: "Make empty commit regularly for keeping alive a cronjob trigger on GitHub Action"
 
 on:
   schedule:
-    - cron: '0 22 */50 * *'
+    - cron: '0 22 * */1 *'
   workflow_dispatch:
 
 jobs:
@@ -12,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Keep alive for a cronjob trigger
+      - name: "Keepalive Action"
         run: |
           git config --global user.email "someone@sample.com"
           git config --global user.name "Keepalive Action"
