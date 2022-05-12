@@ -1,5 +1,4 @@
 name: "Keepalive Action"
-description: "Make empty commit regularly for keeping alive a cronjob trigger on GitHub Action"
 
 on:
   schedule:
