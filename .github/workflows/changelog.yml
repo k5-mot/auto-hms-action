@@ -1,9 +1,9 @@
-name: GitHub Action for keeping a cronjob trigger.
+name: "CHANGELOG Action"
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 jobs:
@@ -13,51 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Keep alive for a cronjob trigger
-        run: |
-          git config --global user.email "someone@sample.com"
-          git config --global user.name "CONTRIBUTING Action"
-          git commit --verbose --allow-empty -m ":robot: Generate CONTRIBUTING.md"
-					git log --decorate | awk -f "
-					BEGIN {
-						print "# CHANGELOG"
-						COMMIT = ""
-						OTHER_COMMIT_FIRST=1
-						DATE = ""
-						TAG = ""
-						"git config --get remote.origin.url" | getline ORIGIN
-}
-/^commit/ {
-	COMMIT=$2
-	if($0 !~ /tag:/) {
-		TAG = ""
-		next
-}
-	TAG=gensub(/.+tag\: (.+)\)$/, "\\1", "g", $0)
-	OTHER_COMMIT_FIRST=1
-}
-/^Date:/ {
-	DATE = substr($0, 9)
-	if(TAG != "") {
-		print ""
-		print "## " TAG " (" DATE ") [" substr(COMMIT, 0, 7) "](" ORIGIN "/commit/" COMMIT ")"
-		print ""
-		COMMIT = ""
-}
-}
-/^    / {
-	if(TAG != "") {
-		sub(/^ +/, "") ; print
-} else {
-	if(OTHER_COMMIT_FIRST) {
-		print ""
-		print "- other commits"
-		OTHER_COMMIT_FIRST=0
-	}
-	sub(/^ +-?/, "")
-	print "    - " $0 " (" DATE ") [" substr(COMMIT, 0, 7) "](" ORIGIN "/commit/" COMMIT ")"
-}
-}
-git push --verbose https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git
-
+      - name: "CHANGELOG Action"
+        uses: k5-mot/changelog-action@main
+        with:
+          GITHUB_TOKEN: ${{env.GITHUB_TOKEN}}
 
