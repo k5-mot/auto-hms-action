@@ -71,19 +71,6 @@ def main(argv = sys.argv):
         else:
             break
 
-    # 「登録しました!」ポップアップの「OK」を押下
-    while True:
-        try:
-            wait = WebDriverWait(driver, 10)
-            alert = wait.until(EC.alert_is_present())
-            text = alert.text
-            # print(text)
-            alert.accept()
-        except:
-            continue
-        else:
-            break
-
     # 「メニューへ」ボタンをクリック
     WebDriverWait(driver, 15).until(EC.presence_of_all_elements_located)
     print('Updated: ', end='')
